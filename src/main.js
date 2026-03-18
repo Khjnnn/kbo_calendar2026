@@ -6,7 +6,7 @@ import './style.css';
 import { initTabs, getActiveTab } from './tabs.js';
 import { initCalendar, setMarkerProvider, renderCalendar, getCurrentMonth } from './calendar.js';
 import { loadGames, gameMarkerProvider, getGamesForDate, renderGameDetails, clearGameCache } from './gameSchedule.js';
-import { calculateTickets, ticketMarkerProvider, getTicketsForDate, renderTicketDetails, clearTicketCache } from './ticketSchedule.js';
+import { calculateTickets, ticketMarkerProvider, getTicketsForDate, renderTicketDetails, clearTicketCache, getTicketsForGame } from './ticketSchedule.js';
 import { initTeamFilter } from './teamFilter.js';
 
 // 현재 날짜
@@ -97,6 +97,81 @@ function handleTabChange(tabName) {
   }
 }
 
+// ========== 예매정보 모달 ==========
+function initTicketModal() {
+  const overlay = document.getElementById('ticket-modal-overlay');
+  const closeBtn = document.getElementById('modal-close');
+  const modalBody = document.getElementById('modal-body');
+
+  // 닫기 버튼
+  closeBtn.addEventListener('click', () => overlay.classList.add('hidden'));
+
+  // 오버레이 클릭 시 닫기
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.classList.add('hidden');
+  });
+
+  // ESC 키로 닫기
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
+      overlay.classList.add('hidden');
+    }
+  });
+
+  // 경기 카드 클릭 이벤트 위임
+  document.getElementById('detail-list').addEventListener('click', (e) => {
+    const card = e.target.closest('.game-card');
+    if (!card) return;
+
+    const gameDate = card.dataset.gameDate;
+    const homeTeam = card.dataset.homeTeam;
+    const awayTeam = card.dataset.awayTeam;
+    const stadium = card.dataset.stadium;
+    const time = card.dataset.time;
+    if (!gameDate || !homeTeam) return;
+
+    const tickets = getTicketsForGame(gameDate, homeTeam);
+    const days = ['일', '월', '화', '수', '목', '금', '토'];
+    const gd = new Date(gameDate + 'T00:00:00');
+    const gameDateDisplay = `${gd.getMonth() + 1}월 ${gd.getDate()}일 (${days[gd.getDay()]}) ${time}`;
+
+    let html = `
+      <div class="modal-game-header">
+        <div class="modal-game-teams">${homeTeam} vs ${awayTeam}</div>
+        <div class="modal-game-meta">${gameDateDisplay} · ${stadium}</div>
+      </div>
+    `;
+
+    if (tickets.length === 0) {
+      html += '<div class="modal-no-ticket">예매 일정 정보가 없습니다</div>';
+    } else {
+      tickets.sort((a, b) => a.date.localeCompare(b.date));
+      tickets.forEach(t => {
+        const td = new Date(t.date + 'T00:00:00');
+        const ticketDateStr = `${td.getMonth() + 1}월 ${td.getDate()}일 (${days[td.getDay()]})`;
+        const icon = t.type === 'presale' ? '🎫' : '🎟️';
+        const seriesBadge = t.isSeries
+          ? `<div class="modal-series-badge">시리즈 전체 예매</div>`
+          : '';
+        html += `
+          <div class="modal-ticket-item ${t.type}">
+            <span class="modal-ticket-icon">${icon}</span>
+            <div class="modal-ticket-info">
+              <div class="modal-ticket-type">${t.label}</div>
+              <div class="modal-ticket-date">${ticketDateStr}</div>
+              ${t.time ? `<div class="modal-ticket-time">${t.time} 오픈</div>` : ''}
+              ${seriesBadge}
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    modalBody.innerHTML = html;
+    overlay.classList.remove('hidden');
+  });
+}
+
 // ========== 앱 초기화 ==========
 /** 필터 변경 시 달력 + 상세 패널 갱신 */
 function handleFilterChange() {
@@ -122,10 +197,13 @@ async function init() {
     getMarkers: ticketMarkerProvider // 기본 탭은 예매일정
   });
 
-  // 4. 초기 상세 패널
+  // 4. 예매정보 모달 초기화
+  initTicketModal();
+
+  // 5. 초기 상세 패널
   updateDetailPanel(null);
 
-  // 5. 데이터 로드
+  // 6. 데이터 로드
   await loadMonthData(initialYear, initialMonth);
 }
 

@@ -114,7 +114,7 @@ export function renderGameDetails(games) {
   return games.map((game, idx) => {
     const tc = getTeamColor(game.home);
     return `
-      <div class="detail-card game-card${isWeekendOrHoliday(game.date, game.day) ? ' weekend-holiday' : ''}" style="border-left-color:${tc.primary};animation-delay:${idx * 0.05}s">
+      <div class="detail-card game-card${isWeekendOrHoliday(game.date, game.day) ? ' weekend-holiday' : ''}" style="border-left-color:${tc.primary};animation-delay:${idx * 0.05}s" data-game-date="${game.date}" data-home-team="${game.home}" data-away-team="${game.away}" data-stadium="${game.stadium}" data-time="${game.time}">
         <span class="card-icon-wrap" style="background:${tc.light};color:${tc.primary}">⚾</span>
         <div class="card-info">
           <div class="card-teams"><span class="team-name" style="color:${tc.text}">${game.home}</span> <span class="vs-label">vs</span> ${game.away}</div>

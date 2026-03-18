@@ -949,6 +949,190 @@ button {
 .team-hanwha { --team-color: #ff6600; }
 .team-kiwoom { --team-color: #820024; }
 
+/* ---------- Ticket Modal ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: modalFadeIn 0.2s ease;
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.modal-content {
+  background: var(--bg-primary);
+  border-radius: 18px 18px 0 0;
+  width: 100%;
+  max-width: 500px;
+  max-height: 70vh;
+  overflow-y: auto;
+  animation: modalSlideUp 0.25s ease;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px 12px;
+  border-bottom: 1px solid var(--border-light);
+  position: sticky;
+  top: 0;
+  background: var(--bg-primary);
+  border-radius: 18px 18px 0 0;
+  z-index: 1;
+}
+
+.modal-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.modal-close:hover {
+  color: var(--text-primary);
+}
+
+.modal-body {
+  padding: 16px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-game-header {
+  text-align: center;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--border-light);
+  margin-bottom: 4px;
+}
+
+.modal-game-teams {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.modal-game-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.modal-ticket-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent);
+}
+
+.modal-ticket-item.presale {
+  border-left-color: #d97706;
+}
+
+.modal-ticket-item.general {
+  border-left-color: var(--accent);
+}
+
+.modal-ticket-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.modal-ticket-info {
+  flex: 1;
+}
+
+.modal-ticket-type {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.modal-ticket-item.presale .modal-ticket-type {
+  color: #d97706;
+}
+
+.modal-ticket-item.general .modal-ticket-type {
+  color: var(--accent);
+}
+
+.modal-ticket-date {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.modal-ticket-time {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.modal-no-ticket {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.modal-series-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: #d97706;
+  background: #FFF8E1;
+  border: 1px solid #FFE082;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-top: 4px;
+}
+
+/* ---------- Game card clickable ---------- */
+.game-card {
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.game-card:active {
+  transform: scale(0.98);
+}
+
 /* ---------- Selection highlight ---------- */
 ::selection {
   background: rgba(22, 101, 52, 0.15);

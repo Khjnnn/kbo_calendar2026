@@ -234,6 +234,38 @@ function formatDisplayDate(dateStr) {
 }
 
 /**
+ * 특정 경기의 예매일 정보 조회
+ * @param {string} gameDate — 경기 날짜 "2026-03-28"
+ * @param {string} homeTeam — 홈팀 키 "LG"
+ * @returns {Array} 해당 경기의 예매 항목 배열
+ */
+export function getTicketsForGame(gameDate, homeTeam) {
+  const results = [];
+  Object.values(ticketsByDate).forEach(tickets => {
+    tickets.forEach(t => {
+      if (t.team === homeTeam) {
+        // 일반 경기: gameDate 직접 매칭
+        if (t.gameDate === gameDate) {
+          results.push(t);
+        }
+        // 시리즈 경기: seriesGames 배열에 포함 여부
+        else if (t.isSeries && t.seriesGames && t.seriesGames.includes(gameDate)) {
+          results.push(t);
+        }
+      }
+    });
+  });
+  // 중복 제거 (같은 type은 한 번만)
+  const seen = new Set();
+  return results.filter(t => {
+    const key = `${t.type}-${t.date}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+/**
  * 캐시 초기화
  */
 export function clearTicketCache() {
