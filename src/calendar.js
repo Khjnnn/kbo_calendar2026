@@ -3,6 +3,24 @@
  * 월별 그리드 생성, 월 이동, 날짜 선택 이벤트
  */
 
+const HOLIDAYS_2026 = {
+  '2026-01-01': '신정',
+  '2026-01-27': '설날 연휴',
+  '2026-01-28': '설날',
+  '2026-01-29': '설날 연휴',
+  '2026-03-01': '삼일절',
+  '2026-05-05': '어린이날',
+  '2026-05-24': '부처님오신날',
+  '2026-06-06': '현충일',
+  '2026-08-15': '광복절',
+  '2026-09-24': '추석 연휴',
+  '2026-09-25': '추석',
+  '2026-09-26': '추석 연휴',
+  '2026-10-03': '개천절',
+  '2026-10-09': '한글날',
+  '2026-12-25': '크리스마스'
+};
+
 let currentYear = 0;
 let currentMonth = 0; // 0-indexed internally
 let selectedDate = null;
@@ -79,6 +97,8 @@ export function renderCalendar() {
     // 요일 클래스
     if (dow === 0) cell.classList.add('sunday');
     if (dow === 6) cell.classList.add('saturday');
+    const holidayName = HOLIDAYS_2026[dateStr];
+    if (holidayName) cell.classList.add('holiday');
 
     // 오늘 표시
     if (dateStr === todayStr) cell.classList.add('today');
@@ -91,6 +111,14 @@ export function renderCalendar() {
     numEl.className = 'day-number';
     numEl.textContent = d;
     cell.appendChild(numEl);
+
+    // 공휴일 이름 라벨
+    if (holidayName) {
+      const holEl = document.createElement('span');
+      holEl.className = 'holiday-name';
+      holEl.textContent = holidayName;
+      cell.appendChild(holEl);
+    }
 
     // 마커 영역
     if (markerProvider) {

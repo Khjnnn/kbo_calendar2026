@@ -28,7 +28,10 @@ function isWeekendOrHoliday(dateStr, day) {
  */
 export async function loadGames(year, month) {
   const key = `${year}-${String(month).padStart(2, '0')}`;
-  if (gamesData[key]) return gamesData[key];
+  if (gamesData[key]) {
+    buildGameIndex(key);
+    return gamesData[key];
+  }
 
   try {
     const res = await fetch(`/data/games_${year}_${String(month).padStart(2, '0')}.json`);

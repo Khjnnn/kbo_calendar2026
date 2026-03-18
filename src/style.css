@@ -549,7 +549,20 @@ button {
 }
 
 .day-cell.sunday .day-number { color: var(--sunday); }
+.day-cell.holiday .day-number { color: var(--sunday); }
 .day-cell.saturday .day-number { color: var(--saturday); }
+
+.holiday-name {
+  font-size: 0.48rem;
+  color: var(--sunday);
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: block;
+  opacity: 0.85;
+}
 
 /* Today — Amber gold circle */
 .day-cell.today .day-number {
