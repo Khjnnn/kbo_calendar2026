@@ -112,7 +112,7 @@
             "stadium": "대전",
             "preSale": { },
             "generalSale": {
-                "daysBefore": 6,
+                "daysBefore": 7,
                 "time": "11:00",
                 "label": "일반예매"
             }
