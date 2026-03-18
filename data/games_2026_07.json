@@ -1,0 +1,136 @@
+{
+    "month": "2026-07",
+    "games": [
+        {"date": "2026-07-01", "day": "수", "home": "두산", "away": "롯데", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-01", "day": "수", "home": "NC", "away": "삼성", "time": "18:30", "stadium": "창원"},
+        {"date": "2026-07-01", "day": "수", "home": "KIA", "away": "SSG", "time": "18:30", "stadium": "광주"},
+        {"date": "2026-07-01", "day": "수", "home": "키움", "away": "LG", "time": "18:30", "stadium": "고척"},
+        {"date": "2026-07-01", "day": "수", "home": "한화", "away": "KT", "time": "18:30", "stadium": "대전"},
+
+        {"date": "2026-07-02", "day": "목", "home": "두산", "away": "롯데", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-02", "day": "목", "home": "NC", "away": "삼성", "time": "18:30", "stadium": "창원"},
+        {"date": "2026-07-02", "day": "목", "home": "KIA", "away": "SSG", "time": "18:30", "stadium": "광주"},
+        {"date": "2026-07-02", "day": "목", "home": "키움", "away": "LG", "time": "18:30", "stadium": "고척"},
+        {"date": "2026-07-02", "day": "목", "home": "한화", "away": "KT", "time": "18:30", "stadium": "대전"},
+
+        {"date": "2026-07-03", "day": "금", "home": "LG", "away": "한화", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-03", "day": "금", "home": "SSG", "away": "삼성", "time": "18:30", "stadium": "문학"},
+        {"date": "2026-07-03", "day": "금", "home": "KT", "away": "롯데", "time": "18:30", "stadium": "수원"},
+        {"date": "2026-07-03", "day": "금", "home": "KIA", "away": "NC", "time": "18:30", "stadium": "광주"},
+        {"date": "2026-07-03", "day": "금", "home": "키움", "away": "두산", "time": "18:30", "stadium": "고척"},
+
+        {"date": "2026-07-04", "day": "토", "home": "LG", "away": "한화", "time": "17:00", "stadium": "잠실"},
+        {"date": "2026-07-04", "day": "토", "home": "SSG", "away": "삼성", "time": "17:00", "stadium": "문학"},
+        {"date": "2026-07-04", "day": "토", "home": "KT", "away": "롯데", "time": "17:00", "stadium": "수원"},
+        {"date": "2026-07-04", "day": "토", "home": "KIA", "away": "NC", "time": "17:00", "stadium": "광주"},
+        {"date": "2026-07-04", "day": "토", "home": "키움", "away": "두산", "time": "17:00", "stadium": "고척"},
+
+        {"date": "2026-07-05", "day": "일", "home": "LG", "away": "한화", "time": "14:00", "stadium": "잠실"},
+        {"date": "2026-07-05", "day": "일", "home": "SSG", "away": "삼성", "time": "14:00", "stadium": "문학"},
+        {"date": "2026-07-05", "day": "일", "home": "KT", "away": "롯데", "time": "14:00", "stadium": "수원"},
+        {"date": "2026-07-05", "day": "일", "home": "KIA", "away": "NC", "time": "14:00", "stadium": "광주"},
+        {"date": "2026-07-05", "day": "일", "home": "키움", "away": "두산", "time": "14:00", "stadium": "고척"},
+
+        {"date": "2026-07-07", "day": "화", "home": "두산", "away": "SSG", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-07", "day": "화", "home": "롯데", "away": "KIA", "time": "18:30", "stadium": "사직"},
+        {"date": "2026-07-07", "day": "화", "home": "삼성", "away": "LG", "time": "18:30", "stadium": "대구"},
+        {"date": "2026-07-07", "day": "화", "home": "KT", "away": "키움", "time": "18:30", "stadium": "수원"},
+        {"date": "2026-07-07", "day": "화", "home": "한화", "away": "NC", "time": "18:30", "stadium": "대전"},
+
+        {"date": "2026-07-08", "day": "수", "home": "두산", "away": "SSG", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-08", "day": "수", "home": "롯데", "away": "KIA", "time": "18:30", "stadium": "사직"},
+        {"date": "2026-07-08", "day": "수", "home": "삼성", "away": "LG", "time": "18:30", "stadium": "대구"},
+        {"date": "2026-07-08", "day": "수", "home": "KT", "away": "키움", "time": "18:30", "stadium": "수원"},
+        {"date": "2026-07-08", "day": "수", "home": "한화", "away": "NC", "time": "18:30", "stadium": "대전"},
+
+        {"date": "2026-07-09", "day": "목", "home": "두산", "away": "SSG", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-09", "day": "목", "home": "롯데", "away": "KIA", "time": "18:30", "stadium": "사직"},
+        {"date": "2026-07-09", "day": "목", "home": "삼성", "away": "LG", "time": "18:30", "stadium": "대구"},
+        {"date": "2026-07-09", "day": "목", "home": "KT", "away": "키움", "time": "18:30", "stadium": "수원"},
+        {"date": "2026-07-09", "day": "목", "home": "한화", "away": "NC", "time": "18:30", "stadium": "대전"},
+
+        {"date": "2026-07-16", "day": "목", "home": "LG", "away": "KT", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-16", "day": "목", "home": "SSG", "away": "KIA", "time": "18:30", "stadium": "문학"},
+        {"date": "2026-07-16", "day": "목", "home": "삼성", "away": "롯데", "time": "18:30", "stadium": "대구"},
+        {"date": "2026-07-16", "day": "목", "home": "NC", "away": "두산", "time": "18:30", "stadium": "창원"},
+        {"date": "2026-07-16", "day": "목", "home": "한화", "away": "키움", "time": "18:30", "stadium": "대전"},
+
+        {"date": "2026-07-17", "day": "금", "home": "LG", "away": "KT", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-17", "day": "금", "home": "SSG", "away": "KIA", "time": "18:30", "stadium": "문학"},
+        {"date": "2026-07-17", "day": "금", "home": "삼성", "away": "롯데", "time": "18:30", "stadium": "대구"},
+        {"date": "2026-07-17", "day": "금", "home": "NC", "away": "두산", "time": "18:30", "stadium": "창원"},
+        {"date": "2026-07-17", "day": "금", "home": "한화", "away": "키움", "time": "18:30", "stadium": "대전"},
+
+        {"date": "2026-07-18", "day": "토", "home": "LG", "away": "KT", "time": "17:00", "stadium": "잠실"},
+        {"date": "2026-07-18", "day": "토", "home": "SSG", "away": "KIA", "time": "17:00", "stadium": "문학"},
+        {"date": "2026-07-18", "day": "토", "home": "삼성", "away": "롯데", "time": "17:00", "stadium": "대구"},
+        {"date": "2026-07-18", "day": "토", "home": "NC", "away": "두산", "time": "17:00", "stadium": "창원"},
+        {"date": "2026-07-18", "day": "토", "home": "한화", "away": "키움", "time": "17:00", "stadium": "대전"},
+
+        {"date": "2026-07-19", "day": "일", "home": "LG", "away": "KT", "time": "14:00", "stadium": "잠실"},
+        {"date": "2026-07-19", "day": "일", "home": "SSG", "away": "KIA", "time": "14:00", "stadium": "문학"},
+        {"date": "2026-07-19", "day": "일", "home": "삼성", "away": "롯데", "time": "14:00", "stadium": "대구"},
+        {"date": "2026-07-19", "day": "일", "home": "NC", "away": "두산", "time": "14:00", "stadium": "창원"},
+        {"date": "2026-07-19", "day": "일", "home": "한화", "away": "키움", "time": "14:00", "stadium": "대전"},
+
+        {"date": "2026-07-21", "day": "화", "home": "LG", "away": "NC", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-21", "day": "화", "home": "롯데", "away": "SSG", "time": "18:30", "stadium": "사직"},
+        {"date": "2026-07-21", "day": "화", "home": "KT", "away": "두산", "time": "18:30", "stadium": "수원"},
+        {"date": "2026-07-21", "day": "화", "home": "KIA", "away": "한화", "time": "18:30", "stadium": "광주"},
+        {"date": "2026-07-21", "day": "화", "home": "키움", "away": "삼성", "time": "18:30", "stadium": "고척"},
+
+        {"date": "2026-07-22", "day": "수", "home": "LG", "away": "NC", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-22", "day": "수", "home": "롯데", "away": "SSG", "time": "18:30", "stadium": "사직"},
+        {"date": "2026-07-22", "day": "수", "home": "KT", "away": "두산", "time": "18:30", "stadium": "수원"},
+        {"date": "2026-07-22", "day": "수", "home": "KIA", "away": "한화", "time": "18:30", "stadium": "광주"},
+        {"date": "2026-07-22", "day": "수", "home": "키움", "away": "삼성", "time": "18:30", "stadium": "고척"},
+
+        {"date": "2026-07-23", "day": "목", "home": "LG", "away": "NC", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-23", "day": "목", "home": "롯데", "away": "SSG", "time": "18:30", "stadium": "사직"},
+        {"date": "2026-07-23", "day": "목", "home": "KT", "away": "두산", "time": "18:30", "stadium": "수원"},
+        {"date": "2026-07-23", "day": "목", "home": "KIA", "away": "한화", "time": "18:30", "stadium": "광주"},
+        {"date": "2026-07-23", "day": "목", "home": "키움", "away": "삼성", "time": "18:30", "stadium": "고척"},
+
+        {"date": "2026-07-24", "day": "금", "home": "두산", "away": "삼성", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-24", "day": "금", "home": "SSG", "away": "NC", "time": "18:30", "stadium": "문학"},
+        {"date": "2026-07-24", "day": "금", "home": "롯데", "away": "KT", "time": "18:30", "stadium": "사직"},
+        {"date": "2026-07-24", "day": "금", "home": "KIA", "away": "키움", "time": "18:30", "stadium": "광주"},
+        {"date": "2026-07-24", "day": "금", "home": "한화", "away": "LG", "time": "18:30", "stadium": "대전"},
+
+        {"date": "2026-07-25", "day": "토", "home": "두산", "away": "삼성", "time": "17:00", "stadium": "잠실"},
+        {"date": "2026-07-25", "day": "토", "home": "SSG", "away": "NC", "time": "17:00", "stadium": "문학"},
+        {"date": "2026-07-25", "day": "토", "home": "롯데", "away": "KT", "time": "17:00", "stadium": "사직"},
+        {"date": "2026-07-25", "day": "토", "home": "KIA", "away": "키움", "time": "17:00", "stadium": "광주"},
+        {"date": "2026-07-25", "day": "토", "home": "한화", "away": "LG", "time": "17:00", "stadium": "대전"},
+
+        {"date": "2026-07-26", "day": "일", "home": "두산", "away": "삼성", "time": "14:00", "stadium": "잠실"},
+        {"date": "2026-07-26", "day": "일", "home": "SSG", "away": "NC", "time": "14:00", "stadium": "문학"},
+        {"date": "2026-07-26", "day": "일", "home": "롯데", "away": "KT", "time": "14:00", "stadium": "사직"},
+        {"date": "2026-07-26", "day": "일", "home": "KIA", "away": "키움", "time": "14:00", "stadium": "광주"},
+        {"date": "2026-07-26", "day": "일", "home": "한화", "away": "LG", "time": "14:00", "stadium": "대전"},
+
+        {"date": "2026-07-28", "day": "화", "home": "LG", "away": "키움", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-28", "day": "화", "home": "SSG", "away": "두산", "time": "18:30", "stadium": "문학"},
+        {"date": "2026-07-28", "day": "화", "home": "삼성", "away": "KIA", "time": "18:30", "stadium": "대구"},
+        {"date": "2026-07-28", "day": "화", "home": "NC", "away": "KT", "time": "18:30", "stadium": "창원"},
+        {"date": "2026-07-28", "day": "화", "home": "한화", "away": "롯데", "time": "18:30", "stadium": "대전"},
+
+        {"date": "2026-07-29", "day": "수", "home": "LG", "away": "키움", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-29", "day": "수", "home": "SSG", "away": "두산", "time": "18:30", "stadium": "문학"},
+        {"date": "2026-07-29", "day": "수", "home": "삼성", "away": "KIA", "time": "18:30", "stadium": "대구"},
+        {"date": "2026-07-29", "day": "수", "home": "NC", "away": "KT", "time": "18:30", "stadium": "창원"},
+        {"date": "2026-07-29", "day": "수", "home": "한화", "away": "롯데", "time": "18:30", "stadium": "대전"},
+
+        {"date": "2026-07-30", "day": "목", "home": "LG", "away": "키움", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-30", "day": "목", "home": "SSG", "away": "두산", "time": "18:30", "stadium": "문학"},
+        {"date": "2026-07-30", "day": "목", "home": "삼성", "away": "KIA", "time": "18:30", "stadium": "대구"},
+        {"date": "2026-07-30", "day": "목", "home": "NC", "away": "KT", "time": "18:30", "stadium": "창원"},
+        {"date": "2026-07-30", "day": "목", "home": "한화", "away": "롯데", "time": "18:30", "stadium": "대전"},
+
+        {"date": "2026-07-31", "day": "금", "home": "두산", "away": "LG", "time": "18:30", "stadium": "잠실"},
+        {"date": "2026-07-31", "day": "금", "home": "롯데", "away": "삼성", "time": "18:30", "stadium": "사직"},
+        {"date": "2026-07-31", "day": "금", "home": "NC", "away": "KIA", "time": "18:30", "stadium": "창원"},
+        {"date": "2026-07-31", "day": "금", "home": "KT", "away": "한화", "time": "18:30", "stadium": "수원"},
+        {"date": "2026-07-31", "day": "금", "home": "키움", "away": "SSG", "time": "18:30", "stadium": "고척"}
+    ]
+}

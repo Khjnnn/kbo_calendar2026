@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="2026 KBO 야구 경기일정 및 예매일정 모바일 달력" />
+    <title>⚾ 2026 KBO 달력</title>
+    <script type="module" crossorigin src="/assets/index--QVkRZSx.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-7UqSNV3H.css">
+  </head>
+  <body>
+    <div id="app">
+      <!-- 헤더 -->
+      <header id="app-header">
+        <h1>
+          <svg class="header-ball" width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="46" fill="#FFFFFF" stroke="#D4D0C8" stroke-width="2"/>
+            <path d="M32 14 C28 24, 24 36, 24 50 C24 64, 28 76, 32 86" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+            <path d="M68 14 C72 24, 76 36, 76 50 C76 64, 72 76, 68 86" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+            <line x1="30" y1="20" x2="26" y2="24" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="27" y1="30" x2="23" y2="33" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="25" y1="40" x2="21" y2="42" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="24" y1="50" x2="20" y2="50" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="25" y1="60" x2="21" y2="58" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="27" y1="70" x2="23" y2="67" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="30" y1="80" x2="26" y2="76" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="70" y1="20" x2="74" y2="24" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="73" y1="30" x2="77" y2="33" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="75" y1="40" x2="79" y2="42" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="76" y1="50" x2="80" y2="50" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="75" y1="60" x2="79" y2="58" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="73" y1="70" x2="77" y2="67" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="70" y1="80" x2="74" y2="76" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <span class="header-title">2026 KBO 캘린더</span>
+        </h1>
+      </header>
+
+      <!-- 탭 -->
+      <nav id="tabs">
+        <button class="tab active" data-tab="ticket">예매일정</button>
+        <button class="tab" data-tab="game">경기일정</button>
+      </nav>
+
+      <!-- 상단 광고 배너 (쿠팡 파트너스 캐러셀) -->
+      <div id="ad-top" class="ad-slot">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>new PartnersCoupang.G({"id":973441,"template":"carousel","trackingCode":"AF5506052","width":"680","height":"140","tsource":""});</script>
+      </div>
+
+      <!-- 구단 필터 -->
+      <div id="team-filter"></div>
+
+      <!-- 월 네비게이션 -->
+      <div id="month-nav">
+        <button id="prev-month" aria-label="이전 월">◀</button>
+        <span id="month-label"></span>
+        <button id="next-month" aria-label="다음 월">▶</button>
+      </div>
+
+      <!-- 달력 그리드 -->
+      <div id="calendar">
+        <div class="weekday-header">
+          <span class="sun">일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span class="sat">토</span>
+        </div>
+        <div id="calendar-grid"></div>
+      </div>
+
+      <!-- 선택 날짜 상세 -->
+      <div id="detail-panel">
+        <div id="detail-date"></div>
+        <div id="detail-list"></div>
+      </div>
+
+      <!-- 공지사항 -->
+      <div id="notice-bar">
+        <span class="notice-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        </span>
+        <p class="notice-text">KBO 공식 홈페이지 기준 일정이며, 우천 취소·더블헤더 등 변동 사항은 실시간 반영이 어려울 수 있습니다.</p>
+      </div>
+
+      <!-- 하단 광고 배너 (쿠팡 파트너스 캐러셀) -->
+      <div id="ad-bottom" class="ad-slot">
+        <script>new PartnersCoupang.G({"id":973443,"template":"carousel","trackingCode":"AF5506052","width":"452","height":"50","tsource":""});</script>
+      </div>
+
+      <!-- 쿠팡 파트너스 고지 -->
+      <p id="coupang-disclaimer">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </div>
+
+  </body>
+</html>

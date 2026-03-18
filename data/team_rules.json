@@ -1,0 +1,135 @@
+{
+    "description": "구단별 선예매/일반예매 규칙 설정. daysBefore: 경기일 기준 며칠 전 오픈, time: 오픈 시간(HH:mm)",
+    "rules": {
+        "LG": {
+            "name": "LG 트윈스",
+            "stadium": "잠실",
+            "preSale": {
+                "daysBefore": 8,
+                "time": "11:00",
+                "label": "선예매"
+            },
+            "generalSale": {
+                "daysBefore": 7,
+                "time": "11:00",
+                "label": "일반예매"
+            }
+        },
+        "KT": {
+            "name": "KT 위즈",
+            "stadium": "수원",
+            "preSale": {},
+            "generalSale": {
+                "daysBefore": 7,
+                "time": "16:00",
+                "label": "일반예매"
+            }
+        },
+        "SSG": {
+            "name": "SSG 랜더스",
+            "stadium": "문학",
+            "preSale": {
+                "daysBefore": 7,
+                "time": "11:00",
+                "label": "선선예매"
+            },
+            "generalSale": {
+                "daysBefore": 6,
+                "time": "11:00",
+                "label": "일반예매"
+            }
+        },
+        "NC": {
+            "name": "NC 다이노스",
+            "stadium": "창원",
+            "preSale": { },
+            "generalSale": {
+                "daysBefore": 6,
+                "time": "11:00",
+                "label": "일반예매"
+            }
+        },
+        "두산": {
+            "name": "두산 베어스",
+            "stadium": "잠실",
+            "preSale": {
+                "daysBefore": 7,
+                "time": "10:00",
+                "label": "선예매"
+            },
+            "generalSale": {
+                "daysBefore": 7,
+                "time": "11:00",
+                "label": "일반예매"
+            }
+        },
+        "KIA": {
+            "name": "KIA 타이거즈",
+            "stadium": "광주",
+            "preSale": {
+                "daysBefore": 8,
+                "time": "10:30",
+                "label": "선예매"
+            },
+            "generalSale": {
+                "daysBefore": 7,
+                "time": "11:00",
+                "label": "일반예매"
+            }
+        },
+        "롯데": {
+            "name": "롯데 자이언츠",
+            "stadium": "사직",
+            "seriesSale": true,
+            "preSale": {
+                "daysBefore": 7,
+                "time": "10:00",
+                "label": "선예매"
+            },
+            "generalSale": {
+                "daysBefore": 7,
+                "time": "14:00",
+                "label": "일반예매"
+            }
+        },
+        "삼성": {
+            "name": "삼성 라이온즈",
+            "stadium": "대구",
+            "seriesSale": true,
+            "preSale": {
+                "daysBefore": 8,
+                "time": "11:00",
+                "label": "선예매(S)"
+            },
+            "generalSale": {
+                "daysBefore": 7,
+                "time": "11:00",
+                "label": "일반예매"
+            }
+        },
+        "한화": {
+            "name": "한화 이글스",
+            "stadium": "대전",
+            "preSale": { },
+            "generalSale": {
+                "daysBefore": 6,
+                "time": "11:00",
+                "label": "일반예매"
+            }
+        },
+        "키움": {
+            "name": "키움 히어로즈",
+            "stadium": "고척",
+            "preSale": {
+                "daysBefore": 7,
+                "time": "12:00",
+                "label": "선예매"
+            },
+            "generalSale": {
+                "daysBefore": 7,
+                "time": "14:00",
+                "label": "일반예매"
+            }
+        }
+    }
+}
