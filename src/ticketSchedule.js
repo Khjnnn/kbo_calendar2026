@@ -34,7 +34,11 @@ export async function calculateTickets(games, year, month) {
   const rules = await loadTeamRules();
   ticketsByDate = {};
 
-  if (!games || games.length === 0) return;
+  if (!games || games.length === 0) {
+    // 경기 데이터 없어도 커스텀 예매일정은 로드
+    await loadCustomTickets(rules);
+    return;
+  }
 
   // seriesSale 팀의 홈경기 시리즈 그룹핑
   const seriesMap = {}; // { "team-startDate": [game, game, game] }
@@ -42,6 +46,9 @@ export async function calculateTickets(games, year, month) {
   games.forEach(game => {
     const teamRule = rules[game.home];
     if (!teamRule) return;
+
+    // customTickets 팀은 규칙 기반 계산 스킵
+    if (teamRule.customTickets) return;
 
     if (teamRule.seriesSale) {
       const dow = new Date(game.date + 'T00:00:00').getDay();
@@ -88,6 +95,68 @@ export async function calculateTickets(games, year, month) {
       seriesGames: gameDates,
       seriesOpponents: opponents
     });
+  });
+
+  // 커스텀 예매일정 로드 (롯데 등)
+  await loadCustomTickets(rules);
+}
+
+/**
+ * 커스텀 예매일정 로드 (롯데 등 customTickets: true인 팀)
+ */
+let customTicketsCache = null;
+
+async function loadCustomTickets(rules) {
+  // 커스텀 예매 데이터 로드 (캐시)
+  if (!customTicketsCache) {
+    try {
+      const res = await fetch('/data/lotte_tickets.json');
+      if (res.ok) customTicketsCache = await res.json();
+      else customTicketsCache = [];
+    } catch { customTicketsCache = []; }
+  }
+
+  const team = '롯데';
+  const teamRule = rules[team];
+  const stadium = teamRule ? teamRule.stadium : '사직';
+
+  customTicketsCache.forEach(entry => {
+    const isSeries = entry.gameDates.length > 1;
+    const seriesInfo = isSeries ? { isSeries: true, seriesGames: entry.gameDates } : {};
+
+    // 선예매 (멤버십 예매)
+    if (entry.preSaleDate) {
+      if (!ticketsByDate[entry.preSaleDate]) ticketsByDate[entry.preSaleDate] = [];
+      ticketsByDate[entry.preSaleDate].push({
+        date: entry.preSaleDate,
+        type: 'presale',
+        label: entry.preSaleLabel || '멤버십 예매',
+        team: team,
+        teamName: teamRule ? teamRule.name : '롯데 자이언츠',
+        opponent: entry.opponent,
+        gameDate: entry.gameDates[0],
+        time: entry.preSaleTime || '',
+        stadium: stadium,
+        ...seriesInfo
+      });
+    }
+
+    // 일반예매
+    if (entry.generalDate) {
+      if (!ticketsByDate[entry.generalDate]) ticketsByDate[entry.generalDate] = [];
+      ticketsByDate[entry.generalDate].push({
+        date: entry.generalDate,
+        type: 'general',
+        label: entry.generalLabel || '일반예매',
+        team: team,
+        teamName: teamRule ? teamRule.name : '롯데 자이언츠',
+        opponent: entry.opponent,
+        gameDate: entry.gameDates[0],
+        time: entry.generalTime || '',
+        stadium: stadium,
+        ...seriesInfo
+      });
+    }
   });
 }
 

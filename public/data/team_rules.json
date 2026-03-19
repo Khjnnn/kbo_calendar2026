@@ -80,17 +80,7 @@
         "롯데": {
             "name": "롯데 자이언츠",
             "stadium": "사직",
-            "seriesSale": false,
-            "preSale": {
-                "daysBefore": 7,
-                "time": "10:00",
-                "label": "선예매(임시)"
-            },
-            "generalSale": {
-                "daysBefore": 7,
-                "time": "14:00",
-                "label": "일반예매(임시)"
-            }
+            "customTickets": true
         },
         "삼성": {
             "name": "삼성 라이온즈",
