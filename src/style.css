@@ -67,6 +67,15 @@
   --sunday: #DC2626;
   --saturday: #2563EB;
 
+  /* Weekend/Holiday card */
+  --weekend-holiday-bg: #FFFDE7;
+  --weekend-holiday-border: #FFF9C4;
+
+  /* Series badge */
+  --series-color: #d97706;
+  --series-bg: #FFF8E1;
+  --series-border: #FFE082;
+
   /* Notice */
   --notice-bg: #FEF9EE;
   --notice-border: #F0DDB3;
@@ -134,6 +143,16 @@
     --game-bg: rgba(248, 113, 113, 0.1);
     --game-border: rgba(248, 113, 113, 0.2);
     --today-bg: #FBBF24;
+
+    --sunday: #F87171;
+    --saturday: #60A5FA;
+
+    --weekend-holiday-bg: rgba(251, 191, 36, 0.08);
+    --weekend-holiday-border: rgba(251, 191, 36, 0.18);
+
+    --series-color: #FBBF24;
+    --series-bg: rgba(251, 191, 36, 0.1);
+    --series-border: rgba(251, 191, 36, 0.2);
 
     --notice-bg: rgba(251, 191, 36, 0.06);
     --notice-border: rgba(251, 191, 36, 0.15);
@@ -701,8 +720,8 @@ button {
 }
 
 .detail-card.weekend-holiday {
-  background: #FFFDE7;
-  border-color: #FFF9C4;
+  background: var(--weekend-holiday-bg);
+  border-color: var(--weekend-holiday-border);
 }
 
 @keyframes cardSlideIn {
@@ -800,9 +819,9 @@ button {
   margin-top: 4px;
   font-size: 0.64rem;
   font-weight: 700;
-  color: #d97706;
-  background: #FFF8E1;
-  border: 1px solid #FFE082;
+  color: var(--series-color);
+  background: var(--series-bg);
+  border: 1px solid var(--series-border);
   padding: 2px 8px;
   border-radius: 10px;
   letter-spacing: 0.02em;
@@ -1058,7 +1077,7 @@ button {
 }
 
 .modal-ticket-item.presale {
-  border-left-color: #d97706;
+  border-left-color: var(--series-color);
 }
 
 .modal-ticket-item.general {
@@ -1082,7 +1101,7 @@ button {
 }
 
 .modal-ticket-item.presale .modal-ticket-type {
-  color: #d97706;
+  color: var(--series-color);
 }
 
 .modal-ticket-item.general .modal-ticket-type {
@@ -1115,9 +1134,9 @@ button {
   gap: 3px;
   font-size: 0.64rem;
   font-weight: 700;
-  color: #d97706;
-  background: #FFF8E1;
-  border: 1px solid #FFE082;
+  color: var(--series-color);
+  background: var(--series-bg);
+  border: 1px solid var(--series-border);
   padding: 2px 8px;
   border-radius: 10px;
   margin-top: 4px;
