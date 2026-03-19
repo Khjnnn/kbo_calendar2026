@@ -57,7 +57,13 @@ export async function loadGames(year, month) {
 function buildGameIndex(monthKey) {
   const data = gamesData[monthKey];
   if (!data || !data.games) return;
-
+  // 해당 월 기존 항목 제거 (중복 방지)
+  const prefix = monthKey; // "2026-03"
+  Object.keys(gamesByDate).forEach(dateKey => {
+    if (dateKey.startsWith(prefix)) {
+      delete gamesByDate[dateKey];
+    }
+  });
   data.games.forEach(game => {
     if (!gamesByDate[game.date]) {
       gamesByDate[game.date] = [];
