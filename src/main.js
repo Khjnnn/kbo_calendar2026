@@ -28,6 +28,9 @@ async function loadMonthData(year, month) {
   const allGames = [...(data.games || []), ...(nextData.games || [])];
   await calculateTickets(allGames, year, month);
 
+  // 다음 월 로드로 덮어씌워진 gamesByDate를 현재 월로 복원
+  await loadGames(year, month);
+
   // 현재 탭에 맞는 마커 제공자 설정
   updateMarkerProvider();
 }
