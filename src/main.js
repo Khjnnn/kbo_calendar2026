@@ -18,8 +18,15 @@ const initialMonth = now.getMonth() + 1; // 1-indexed
 async function loadMonthData(year, month) {
   const data = await loadGames(year, month);
 
-  // 예매 일정 계산
-  await calculateTickets(data.games || [], year, month);
+  // 다음 월 경기도 로드 (다음 월 초 경기의 예매일이 현재 월에 해당할 수 있음)
+  let nextYear = year;
+  let nextMonth = month + 1;
+  if (nextMonth > 12) { nextMonth = 1; nextYear++; }
+  const nextData = await loadGames(nextYear, nextMonth);
+
+  // 현재 월 + 다음 월 경기를 합쳐서 예매 일정 계산
+  const allGames = [...(data.games || []), ...(nextData.games || [])];
+  await calculateTickets(allGames, year, month);
 
   // 현재 탭에 맞는 마커 제공자 설정
   updateMarkerProvider();

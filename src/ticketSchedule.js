@@ -182,7 +182,9 @@ export function renderTicketDetails(tickets) {
     `;
   }
 
-  return tickets.map((ticket, idx) => {
+  const sorted = [...tickets].sort((a, b) => (a.time || '99:99').localeCompare(b.time || '99:99'));
+
+  return sorted.map((ticket, idx) => {
     const tc = getTeamColor(ticket.team);
     const icon = ticket.type === 'presale'
       ? `<span class="card-icon-wrap presale-icon" style="background:${tc.light};color:${tc.primary}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="m9.5 8 5 8"/><circle cx="9" cy="9" r=".5" fill="currentColor"/><circle cx="15" cy="15" r=".5" fill="currentColor"/></svg><span class="icon-star">★</span></span>`
