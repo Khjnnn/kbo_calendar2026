@@ -57,6 +57,7 @@ export async function loadGames(year, month) {
 function buildGameIndex(monthKey) {
   const data = gamesData[monthKey];
   if (!data || !data.games) return;
+
   // 해당 월 기존 항목 제거 (중복 방지)
   const prefix = monthKey; // "2026-03"
   Object.keys(gamesByDate).forEach(dateKey => {
@@ -64,6 +65,7 @@ function buildGameIndex(monthKey) {
       delete gamesByDate[dateKey];
     }
   });
+
   data.games.forEach(game => {
     if (!gamesByDate[game.date]) {
       gamesByDate[game.date] = [];
@@ -83,14 +85,10 @@ export function gameMarkerProvider(dateStr) {
     return { markers: [], hasEvents: false };
   }
 
-  // 경기 수에 따라 마커 개수 조정 (최대 3개)
-  const count = Math.min(games.length, 3);
-  const markers = [];
-  for (let i = 0; i < count; i++) {
-    markers.push({ type: 'game', emoji: '⚾' });
-  }
-
-  return { markers, hasEvents: true };
+  return {
+    markers: [{ type: 'game', icon: '/img/icon_ball.svg' }],
+    hasEvents: true
+  };
 }
 
 /**
@@ -121,7 +119,7 @@ export function renderGameDetails(games) {
     const tc = getTeamColor(game.home);
     return `
       <div class="detail-card game-card${isWeekendOrHoliday(game.date, game.day) ? ' weekend-holiday' : ''}" style="border-left-color:${tc.primary};animation-delay:${idx * 0.05}s" data-game-date="${game.date}" data-home-team="${game.home}" data-away-team="${game.away}" data-stadium="${game.stadium}" data-time="${game.time}">
-        <span class="card-icon-wrap" style="background:${tc.light};color:${tc.primary}">⚾</span>
+        <span class="card-icon-wrap" style="background:${tc.light}"><img class="team-logo" src="/img/team_logo/${tc.logo || 'lg'}.png" alt="${game.home}" /><span class="card-badge game-badge">⚾</span></span>
         <div class="card-info">
           <div class="card-teams"><span class="team-name" style="color:${tc.text}">${game.home}</span> <span class="vs-label">vs</span> ${game.away}</div>
           <div class="card-meta">${game.stadium}</div>

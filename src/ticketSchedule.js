@@ -217,14 +217,10 @@ export function ticketMarkerProvider(dateStr) {
     return { markers: [], hasEvents: false };
   }
 
-  const markers = [];
-  const hasPreSale = tickets.some(t => t.type === 'presale');
-  const hasGeneral = tickets.some(t => t.type === 'general');
-
-  if (hasPreSale) markers.push({ type: 'presale', emoji: '🎫' });
-  if (hasGeneral) markers.push({ type: 'general', emoji: '🎟️' });
-
-  return { markers, hasEvents: true };
+  return {
+    markers: [{ type: 'ticket', icon: '/img/icon_ticket.svg' }],
+    hasEvents: true
+  };
 }
 
 /**
@@ -255,9 +251,9 @@ export function renderTicketDetails(tickets) {
 
   return sorted.map((ticket, idx) => {
     const tc = getTeamColor(ticket.team);
-    const icon = ticket.type === 'presale'
-      ? `<span class="card-icon-wrap presale-icon" style="background:${tc.light};color:${tc.primary}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="m9.5 8 5 8"/><circle cx="9" cy="9" r=".5" fill="currentColor"/><circle cx="15" cy="15" r=".5" fill="currentColor"/></svg><span class="icon-star">★</span></span>`
-      : `<span class="card-icon-wrap general-icon" style="background:${tc.light};color:${tc.primary}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg></span>`;
+    const badgeClass = ticket.type === 'presale' ? 'presale-badge' : 'general-badge';
+    const badgeIcon = '🎫';
+    const icon = `<span class="card-icon-wrap" style="background:${tc.light}"><img class="team-logo" src="/img/team_logo/${tc.logo || 'lg'}.png" alt="${ticket.team}" /><span class="card-badge ticket-badge-icon ${badgeClass}">${badgeIcon}</span></span>`;
     return `
       <div class="detail-card ticket-card ${ticket.type}${isWeekendOrHoliday(ticket.gameDate) ? ' weekend-holiday' : ''}" style="border-left-color:${tc.primary};animation-delay:${idx * 0.05}s">
         ${icon}

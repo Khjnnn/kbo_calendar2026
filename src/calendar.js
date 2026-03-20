@@ -126,12 +126,16 @@ export function renderCalendar() {
       if (info && info.markers && info.markers.length > 0) {
         const markersDiv = document.createElement('div');
         markersDiv.className = 'day-markers';
-        info.markers.forEach((m, idx) => {
-          const span = document.createElement('span');
-          span.className = `marker ${m.type}`;
-          span.textContent = m.emoji;
-          span.style.animationDelay = `${idx * 0.05}s`;
-          markersDiv.appendChild(span);
+        info.markers.forEach((m) => {
+          if (m.icon) {
+            const img = document.createElement('img');
+            img.className = `marker-icon ${m.type}`;
+            img.src = m.icon;
+            img.width = 14;
+            img.height = 14;
+            img.alt = m.type;
+            markersDiv.appendChild(img);
+          }
         });
         cell.appendChild(markersDiv);
       }
@@ -173,4 +177,9 @@ export function getCurrentMonth() {
 /** 현재 선택된 날짜 반환 */
 export function getSelectedDate() {
   return selectedDate;
+}
+
+/** 외부에서 선택 날짜 설정 (리렌더 시 유지용) */
+export function setSelectedDate(dateStr) {
+  selectedDate = dateStr;
 }

@@ -10,6 +10,7 @@
       gtag('config', 'G-MRHWX2QY2S');
     </script>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="description" content="2026 KBO 야구 경기일정 및 예매일정 모바일 달력" />
@@ -21,28 +22,9 @@
     <div id="app">
       <!-- 헤더 -->
       <header id="app-header">
-        <h1>
-          <svg class="header-ball" width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="46" fill="#FFFFFF" stroke="#D4D0C8" stroke-width="2"/>
-            <path d="M32 14 C28 24, 24 36, 24 50 C24 64, 28 76, 32 86" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
-            <path d="M68 14 C72 24, 76 36, 76 50 C76 64, 72 76, 68 86" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
-            <line x1="30" y1="20" x2="26" y2="24" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="27" y1="30" x2="23" y2="33" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="25" y1="40" x2="21" y2="42" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="24" y1="50" x2="20" y2="50" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="25" y1="60" x2="21" y2="58" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="27" y1="70" x2="23" y2="67" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="30" y1="80" x2="26" y2="76" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="70" y1="20" x2="74" y2="24" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="73" y1="30" x2="77" y2="33" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="75" y1="40" x2="79" y2="42" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="76" y1="50" x2="80" y2="50" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="75" y1="60" x2="79" y2="58" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="73" y1="70" x2="77" y2="67" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="70" y1="80" x2="74" y2="76" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-          <span class="header-title">2026 KBO 캘린더</span>
-        </h1>
+        <img class="header-ball" src="/img/img_ball.avif" alt="야구공" width="48" height="48" />
+        <h1 class="header-title">2026 KBO 캘린더</h1>
+        <p class="header-sub">경기일정 · 예매일정 한눈에</p>
       </header>
 
       <!-- 탭 -->
@@ -54,9 +36,10 @@
       <!-- 상단 광고 배너 (쿠팡 파트너스 캐러셀) -->
       <div id="ad-top" class="ad-slot">
         <script src="https://ads-partners.coupang.com/g.js"></script>
-        <script>new PartnersCoupang.G({"id":973441,"template":"carousel","trackingCode":"AF5506052","width":"680","height":"140","tsource":""});</script>
+        <script>
+          new PartnersCoupang.G({"id":974115,"template":"carousel","trackingCode":"AF5506052","width":"500","height":"80","tsource":""});
+        </script>
       </div>
-
       <!-- 구단 필터 -->
       <div id="team-filter"></div>
 
@@ -88,7 +71,7 @@
         </span>
         <p class="notice-text">KBO 공식 홈페이지 기준 일정이며, 우천 취소·더블헤더 등 변동 사항은 실시간 반영이 어려울 수 있습니다.</p>
       </div>
-
+      
       <!-- 하단 광고 배너 (쿠팡 파트너스 캐러셀) -->
       <div id="ad-bottom" class="ad-slot">
         <script>new PartnersCoupang.G({"id":973443,"template":"carousel","trackingCode":"AF5506052","width":"452","height":"50","tsource":""});</script>
@@ -96,6 +79,7 @@
 
       <!-- 쿠팡 파트너스 고지 -->
       <p id="coupang-disclaimer">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+
     </div>
     <!-- 예매정보 모달 -->
     <div id="ticket-modal-overlay" class="modal-overlay hidden">

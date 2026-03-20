@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <path d="M 100 50
+           L 700 50
+           A 30 30 0 0 1 730 80
+           L 730 150
+           A 50 50 0 0 0 730 250
+           L 730 320
+           A 30 30 0 0 1 700 350
+           L 100 350
+           A 30 30 0 0 1 70 320
+           L 70 250
+           A 50 50 0 0 0 70 150
+           L 70 80
+           A 30 30 0 0 1 100 50 Z"
+        fill="#f3efe4" stroke="#2c77e7" stroke-width="24" stroke-linejoin="round" />
+
+  <line x1="200" y1="62" x2="200" y2="338" stroke="#1c4b82" stroke-width="12" stroke-dasharray="20, 15" stroke-linecap="butt" />
+
+  <text x="460" y="240" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="130" font-weight="900" fill="#1c4b82" textLength="400" lengthAdjust="spacingAndGlyphs">TICKET</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="ballClip">
+      <circle cx="50" cy="50" r="48" />
+    </clipPath>
+    
+    <mask id="shadowMask">
+      <rect x="0" y="0" width="100" height="100" fill="white" />
+      <circle cx="36" cy="36" r="50" fill="black" />
+    </mask>
+  </defs>
+
+  <g clip-path="url(#ballClip)">
+    
+    <rect x="0" y="0" width="100" height="100" fill="#f2ebcd" />
+
+    <path d="M 42 2 Q 60 35 98 48" fill="none" stroke="#959a9e" stroke-width="3" />
+    <path d="M 2 42 Q 35 60 48 98" fill="none" stroke="#959a9e" stroke-width="3" />
+
+    <g stroke="#c42126" stroke-width="4.5" stroke-linecap="round">
+      
+      <line x1="44" y1="15" x2="50" y2="7" />
+      <line x1="52" y1="24" x2="58" y2="16" />
+      <line x1="59" y1="31" x2="65" y2="23" />
+      <line x1="68" y1="38" x2="74" y2="30" />
+      <line x1="77" y1="44" x2="83" y2="36" />
+      <line x1="88" y1="49" x2="94" y2="41" />
+      <line x1="95" y1="52" x2="101" y2="44" />
+
+      <line x1="7" y1="50" x2="15" y2="44" />
+      <line x1="16" y1="58" x2="24" y2="52" />
+      <line x1="23" y1="65" x2="31" y2="59" />
+      <line x1="30" y1="74" x2="38" y2="68" />
+      <line x1="36" y1="83" x2="44" y2="77" />
+      <line x1="41" y1="94" x2="49" y2="88" />
+      <line x1="44" y1="101" x2="52" y2="95" />
+      
+    </g>
+
+    <rect x="0" y="0" width="100" height="100" fill="#7a5c29" opacity="0.22" mask="url(#shadowMask)" />
+    
+  </g>
+</svg>

@@ -4,7 +4,7 @@
  */
 import './style.css';
 import { initTabs, getActiveTab } from './tabs.js';
-import { initCalendar, setMarkerProvider, renderCalendar, getCurrentMonth } from './calendar.js';
+import { initCalendar, setMarkerProvider, renderCalendar, getCurrentMonth, setSelectedDate } from './calendar.js';
 import { loadGames, gameMarkerProvider, getGamesForDate, renderGameDetails, clearGameCache } from './gameSchedule.js';
 import { calculateTickets, ticketMarkerProvider, getTicketsForDate, renderTicketDetails, clearTicketCache, getTicketsForGame } from './ticketSchedule.js';
 import { initTeamFilter } from './teamFilter.js';
@@ -210,11 +210,19 @@ async function init() {
   // 4. 예매정보 모달 초기화
   initTicketModal();
 
-  // 5. 초기 상세 패널
-  updateDetailPanel(null);
-
-  // 6. 데이터 로드
+  // 5. 데이터 로드
   await loadMonthData(initialYear, initialMonth);
+
+  // 6. 오늘 날짜 자동 선택
+  const todayStr = `${initialYear}-${String(initialMonth).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  const todayCell = document.querySelector(`.day-cell[data-date="${todayStr}"]`);
+  if (todayCell) {
+    setSelectedDate(todayStr);
+    todayCell.classList.add('selected');
+    updateDetailPanel(todayStr);
+  } else {
+    updateDetailPanel(null);
+  }
 }
 
 // DOM 준비 후 실행
