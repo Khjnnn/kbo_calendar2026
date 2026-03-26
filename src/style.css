@@ -420,6 +420,38 @@ button {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 1px;
+  will-change: transform, opacity;
+}
+
+/* 월 전환 슬라이드 애니메이션 */
+#calendar-grid.slide-out-left {
+  animation: slideOutLeft 0.15s ease forwards;
+}
+#calendar-grid.slide-out-right {
+  animation: slideOutRight 0.15s ease forwards;
+}
+#calendar-grid.slide-in-right {
+  animation: slideInRight 0.2s ease forwards;
+}
+#calendar-grid.slide-in-left {
+  animation: slideInLeft 0.2s ease forwards;
+}
+
+@keyframes slideOutLeft {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(-30px); }
+}
+@keyframes slideOutRight {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(30px); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 .day-cell {
@@ -1106,6 +1138,118 @@ button {
 
 .game-card:active {
   transform: scale(0.98);
+}
+
+/* ---------- Site Intro (SEO 콘텐츠) ---------- */
+#site-intro {
+  padding: 24px 18px 20px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+}
+
+.intro-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.intro-text {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  word-break: keep-all;
+}
+
+.intro-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.intro-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 1px solid rgba(48, 129, 251, 0.15);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.intro-links a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ---------- Site Footer ---------- */
+#site-footer {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  padding: 20px 18px 28px;
+  text-align: center;
+}
+
+#site-footer .footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+#site-footer .footer-nav a {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+#site-footer .footer-nav a:hover {
+  color: var(--accent);
+}
+
+#site-footer .footer-copy {
+  font-size: 0.66rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+#site-footer .footer-disclaimer {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* ---------- Page Transition (메인 앱) ---------- */
+#app {
+  animation: appFadeIn 0.3s ease forwards;
+}
+
+body.page-leaving #app {
+  animation: appFadeOut 0.2s ease forwards;
+}
+
+@keyframes appFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes appFadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-8px); }
 }
 
 /* ---------- Selection highlight ---------- */

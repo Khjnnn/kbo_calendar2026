@@ -113,7 +113,7 @@
             "preSale": {
                 "daysBefore": 7,
                 "time": "12:00",
-                "label": "선예매"
+                "label": "히어로즈 선예매"
             },
             "generalSale": {
                 "daysBefore": 7,

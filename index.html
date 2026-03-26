@@ -13,10 +13,17 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="2026 KBO 야구 경기일정 및 예매일정 모바일 달력" />
+    <meta name="description" content="2026 KBO 프로야구 경기일정 및 예매일정을 한눈에 확인하는 모바일 달력. 10개 구단별 경기·선예매·일반예매 오픈일 자동 계산, 구장 정보, 예매 가이드 제공." />
+    <meta property="og:title" content="2026 KBO 달력 — 경기일정 · 예매일정 한눈에" />
+    <meta property="og:description" content="KBO 프로야구 10개 구단 경기일정, 선예매/일반예매 오픈일 달력. 구장 정보, 예매 가이드, 시즌 일정 총정리." />
+    <meta property="og:type" content="website" />
+    <meta name="keywords" content="KBO, 프로야구, 경기일정, 예매일정, 야구달력, 2026시즌, 티켓예매, KBO일정" />
+    <link rel="canonical" href="https://kbo-calendar.netlify.app/" />
     <title>⚾ 2026 KBO 달력</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5197731636415334"
      crossorigin="anonymous"></script>
+    <style>#app{opacity:0}</style>
+    <noscript><style>#app{opacity:1!important}</style></noscript>
   </head>
   <body>
     <div id="app">
@@ -33,13 +40,8 @@
         <button class="tab" data-tab="ticket">예매일정</button>        
       </nav>
 
-      <!-- 상단 광고 배너 (쿠팡 파트너스 캐러셀) -->
-      <div id="ad-top" class="ad-slot">
-        <script src="https://ads-partners.coupang.com/g.js"></script>
-        <script>
-          new PartnersCoupang.G({"id":974115,"template":"carousel","trackingCode":"AF5506052","width":"500","height":"80","tsource":""});
-        </script>
-      </div>
+      <!-- 상단 광고 배너 -->
+      <div id="ad-top" class="ad-slot"></div>
       <!-- 구단 필터 -->
       <div id="team-filter"></div>
 
@@ -72,17 +74,39 @@
         <p class="notice-text">KBO 공식 홈페이지 기준 일정이며, 우천 취소·더블헤더 등 변동 사항은 실시간 반영이 어려울 수 있습니다.</p>
       </div>
       
-      <!-- 하단 광고 배너 (쿠팡 파트너스 캐러셀) -->
-      <div id="ad-bottom" class="ad-slot">
-        <script>new PartnersCoupang.G({"id":973443,"template":"carousel","trackingCode":"AF5506052","width":"452","height":"50","tsource":""});</script>
+      <!-- 하단 광고 배너 -->
+      <div id="ad-bottom" class="ad-slot"></div>
+
+      <!-- 사이트 소개 콘텐츠 (SEO용 정적 텍스트) -->
+      <div id="site-intro">
+        <h2 class="intro-title">2026 KBO 달력이란?</h2>
+        <p class="intro-text">2026 KBO 프로야구 경기일정과 예매일정을 한눈에 확인할 수 있는 모바일 최적화 캘린더 서비스입니다. LG, 두산, KT, SSG, 키움, KIA, 삼성, 롯데, NC, 한화 10개 구단의 홈경기 일정을 달력 형태로 제공하며, 각 구단의 예매 규칙에 따라 선예매(멤버십)·일반예매 오픈일을 자동으로 계산하여 보여줍니다.</p>
+        <nav class="intro-links">
+          <a href="/stadium-guide.html">🏟️ 구장 정보</a>
+          <a href="/ticket-guide.html">🎫 예매 가이드</a>
+          <a href="/schedule-summary.html">📅 시즌 일정</a>
+          <a href="/faq.html">❓ FAQ</a>
+        </nav>
       </div>
 
-      <!-- 쿠팡 파트너스 고지 -->
-      <p id="coupang-disclaimer">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+      <!-- 푸터 -->
+      <footer id="site-footer">
+        <nav class="footer-nav">
+          <a href="/">달력</a>
+          <a href="/stadium-guide.html">구장 정보</a>
+          <a href="/ticket-guide.html">예매 가이드</a>
+          <a href="/schedule-summary.html">시즌 일정</a>
+          <a href="/faq.html">FAQ</a>
+          <a href="/about.html">사이트 소개</a>
+          <a href="/privacy.html">개인정보처리방침</a>
+        </nav>
+        <p class="footer-copy">© 2026 KBO 달력. 본 사이트는 KBO 공식 사이트가 아닙니다.</p>
+        <p class="footer-disclaimer">경기 일정 및 예매 정보는 각 구단 공식 채널을 통해 최종 확인하시기 바랍니다.</p>
+      </footer>
 
     </div>
     <!-- 예매정보 모달 -->
-    <div id="ticket-modal-overlay" class="modal-overlay hidden">
+    <div id="ticket-modal-overlay" class="modal-overlay hidden" hidden>
       <div id="ticket-modal" class="modal-content">
         <div class="modal-header">
           <span class="modal-title">🎫 예매일정</span>
@@ -93,6 +117,17 @@
     </div>
 
     <script type="module" src="/src/main.js"></script>
+    <script>
+      document.addEventListener('click', e => {
+        const a = e.target.closest('a[href]');
+        if (!a) return;
+        const href = a.getAttribute('href');
+        if (!href || href.startsWith('http') || href.startsWith('#') || a.target === '_blank') return;
+        e.preventDefault();
+        document.body.classList.add('page-leaving');
+        setTimeout(() => { window.location.href = href; }, 200);
+      });
+    </script>
 
   </body>
 </html>

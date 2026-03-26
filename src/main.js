@@ -114,17 +114,18 @@ function initTicketModal() {
   const modalBody = document.getElementById('modal-body');
 
   // 닫기 버튼
-  closeBtn.addEventListener('click', () => overlay.classList.add('hidden'));
+  closeBtn.addEventListener('click', () => { overlay.classList.add('hidden'); overlay.setAttribute('hidden', ''); });
 
   // 오버레이 클릭 시 닫기
   overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) overlay.classList.add('hidden');
+    if (e.target === overlay) { overlay.classList.add('hidden'); overlay.setAttribute('hidden', ''); }
   });
 
   // ESC 키로 닫기
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
       overlay.classList.add('hidden');
+      overlay.setAttribute('hidden', '');
     }
   });
 
@@ -178,6 +179,7 @@ function initTicketModal() {
     }
 
     modalBody.innerHTML = html;
+    overlay.removeAttribute('hidden');
     overlay.classList.remove('hidden');
   });
 }

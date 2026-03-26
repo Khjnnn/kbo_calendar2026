@@ -1,0 +1,523 @@
+/* ========================================
+   콘텐츠 페이지 공통 스타일
+   KBO 달력 사이트 — 가이드/정보 페이지용
+   ======================================== */
+
+/* ---------- Page Transition ---------- */
+.page-container {
+  animation: pageFadeIn 0.3s ease forwards;
+}
+
+body.page-leaving .page-container {
+  animation: pageFadeOut 0.2s ease forwards;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pageFadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-8px); }
+}
+
+/* ---------- CSS Variables (메인과 동일) ---------- */
+:root {
+  --bg-primary: #f4f4f4;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-hover: rgba(0, 0, 0, 0.03);
+  --bg-elevated: #ffffff;
+  --text-primary: #191f28;
+  --text-secondary: #4e5968;
+  --text-muted: #8b95a1;
+  --border: #e5e8eb;
+  --border-light: #f2f4f6;
+  --accent: #3081fb;
+  --accent-hover: #1960ca;
+  --accent-bg: rgba(48, 129, 251, 0.06);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --font: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --header-bg: linear-gradient(135deg, #d6e8ff 0%, #e8f0fe 50%, #dce4ff 100%);
+  --header-text: #1b2a4a;
+  --header-sub: #5a7bab;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #181818;
+    --bg-secondary: #1f1f1f;
+    --bg-card: #262626;
+    --bg-hover: rgba(255, 255, 255, 0.05);
+    --bg-elevated: #2c2c2c;
+    --text-primary: #f7f7f7;
+    --text-secondary: #9b9b9b;
+    --text-muted: #6b6b6b;
+    --border: #333333;
+    --border-light: #2a2a2a;
+    --accent: #4d9aff;
+    --accent-hover: #3081fb;
+    --accent-bg: rgba(77, 154, 255, 0.1);
+    --shadow-sm: none;
+    --shadow-md: 0 2px 8px rgba(0,0,0,0.3);
+    --shadow-lg: 0 4px 16px rgba(0,0,0,0.4);
+    --header-bg: linear-gradient(135deg, #1a2744 0%, #1e3158 50%, #192540 100%);
+    --header-text: #e8f0fe;
+    --header-sub: #8eacdb;
+  }
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html { font-size: 16px; -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Page Container ---------- */
+.page-container {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--bg-secondary);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-lg);
+}
+
+/* ---------- Site Header (공통) ---------- */
+.site-header {
+  padding: 20px 20px 16px;
+  background: var(--header-bg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-header .header-logo {
+  width: 36px; height: 36px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.site-header .header-home {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--header-text);
+  text-decoration: none;
+  letter-spacing: -0.03em;
+}
+
+.site-header .header-home:hover { text-decoration: none; opacity: 0.8; }
+
+/* ---------- Navigation ---------- */
+.site-nav {
+  display: flex;
+  gap: 0;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.site-nav a {
+  flex-shrink: 0;
+  padding: 10px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 2.5px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.site-nav a:hover {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.site-nav a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Content Area ---------- */
+.content {
+  flex: 1;
+  padding: 28px 20px 40px;
+}
+
+.content h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.03em;
+  line-height: 1.3;
+}
+
+.content .page-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.content h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 32px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  letter-spacing: -0.02em;
+}
+
+.content h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 24px 0 8px;
+}
+
+.content p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.content ul, .content ol {
+  margin: 0 0 16px 20px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.content li {
+  margin-bottom: 6px;
+  line-height: 1.7;
+}
+
+/* ---------- Info Card ---------- */
+.info-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.info-card .card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-card .card-title .emoji {
+  font-size: 1.2rem;
+}
+
+.info-card .card-body {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.info-card .card-body p {
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+
+.info-card .card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.info-card .meta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+/* ---------- Stadium Card (구장 전용) ---------- */
+.stadium-card {
+  border-left: 4px solid var(--accent);
+}
+
+.stadium-card .stadium-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.stadium-card .stadium-info dt {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.stadium-card .stadium-info dd {
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+/* ---------- Step Guide (예매 가이드용) ---------- */
+.step-list {
+  counter-reset: step-counter;
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+}
+
+.step-list li {
+  counter-increment: step-counter;
+  position: relative;
+  padding: 16px 16px 16px 52px;
+  margin-bottom: 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+}
+
+.step-list li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 14px;
+  top: 16px;
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* ---------- FAQ ---------- */
+.faq-item {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+  overflow: hidden;
+  background: var(--bg-elevated);
+}
+
+.faq-item summary {
+  padding: 16px 20px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s;
+}
+
+.faq-item summary:hover {
+  background: var(--bg-hover);
+}
+
+.faq-item summary::before {
+  content: 'Q';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.faq-item summary::after {
+  content: '\25BC';
+  margin-left: auto;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  transition: transform 0.2s;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.faq-item .faq-answer {
+  padding: 0 20px 16px 54px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* ---------- Table ---------- */
+.content-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 0.82rem;
+}
+
+.content-table th {
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 2px solid var(--accent);
+}
+
+.content-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-secondary);
+}
+
+.content-table tr:hover td {
+  background: var(--bg-hover);
+}
+
+/* ---------- Tip Box ---------- */
+.tip-box {
+  background: rgba(48, 129, 251, 0.05);
+  border: 1px solid rgba(48, 129, 251, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  margin: 16px 0;
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.tip-box strong {
+  color: var(--accent);
+}
+
+.warning-box {
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.18);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  margin: 16px 0;
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ---------- Site Footer ---------- */
+.site-footer {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  padding: 24px 20px 32px;
+  text-align: center;
+}
+
+.site-footer .footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.site-footer .footer-nav a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.site-footer .footer-nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-footer .footer-copy {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.site-footer .footer-disclaimer {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding: 12px 20px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb span { margin: 0 6px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  .content { padding: 20px 16px 32px; }
+  .content h1 { font-size: 1.3rem; }
+  .stadium-card .stadium-info { grid-template-columns: 1fr; }
+}
+
+::selection {
+  background: rgba(48, 129, 251, 0.15);
+  color: var(--text-primary);
+}

@@ -54,18 +54,53 @@ function changeMonth(delta) {
     currentYear++;
   }
   selectedDate = null;
-  renderCalendar();
+  renderCalendarWithTransition(delta);
 
   // 월 변경 이벤트
   dateSelectListeners.forEach(fn => fn(null, currentYear, currentMonth + 1));
+}
+
+/** 월 전환 시 부드러운 트랜지션 */
+function renderCalendarWithTransition(direction) {
+  const grid = document.getElementById('calendar-grid');
+  const label = document.getElementById('month-label');
+
+  // 슬라이드 방향 결정
+  const slideOut = direction > 0 ? 'slide-out-left' : 'slide-out-right';
+  const slideIn = direction > 0 ? 'slide-in-right' : 'slide-in-left';
+
+  // 라벨도 함께 전환
+  label.style.transition = 'opacity 0.15s ease';
+  label.style.opacity = '0';
+
+  // fade-out
+  grid.classList.add(slideOut);
+
+  setTimeout(() => {
+    renderCalendar();
+    grid.classList.remove(slideOut);
+    grid.classList.add(slideIn);
+
+    label.style.opacity = '1';
+
+    // 애니메이션 종료 후 클래스 제거
+    setTimeout(() => {
+      grid.classList.remove(slideIn);
+      label.style.transition = '';
+    }, 200);
+  }, 150);
 }
 
 export function renderCalendar() {
   const grid = document.getElementById('calendar-grid');
   const label = document.getElementById('month-label');
 
-  // 레이블 업데이트
-  label.textContent = `${currentYear}년 ${currentMonth + 1}월`;
+  // 레이블 업데이트 (트랜지션 중이 아닐 때만)
+  if (!label.style.transition) {
+    label.textContent = `${currentYear}년 ${currentMonth + 1}월`;
+  } else {
+    label.textContent = `${currentYear}년 ${currentMonth + 1}월`;
+  }
 
   // 이번 달 첫 날과 마지막 날
   const firstDay = new Date(currentYear, currentMonth, 1);
