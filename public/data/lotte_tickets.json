@@ -40,5 +40,105 @@
     "opponent": "키움",
     "preSaleDate": "2026-04-07", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
     "generalDate": "2026-04-07", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+
+  {
+    "gameDates": ["2026-05-08", "2026-05-09", "2026-05-10"],
+    "opponent": "KIA",
+    "preSaleDate": "2026-04-24", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-04-24", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+  {
+    "gameDates": ["2026-05-12", "2026-05-13", "2026-05-14"],
+    "opponent": "NC",
+    "preSaleDate": "2026-04-28", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-04-28", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+  {
+    "gameDates": ["2026-05-22", "2026-05-23", "2026-05-24"],
+    "opponent": "삼성",
+    "preSaleDate": "2026-05-08", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-05-08", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+  {
+    "gameDates": ["2026-05-26", "2026-05-27", "2026-05-28"],
+    "opponent": "LG",
+    "preSaleDate": "2026-05-12", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-05-12", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+
+  {
+    "gameDates": ["2026-06-05", "2026-06-06", "2026-06-07"],
+    "opponent": "한화",
+    "preSaleDate": "2026-05-22", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-05-22", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+  {
+    "gameDates": ["2026-06-09", "2026-06-10", "2026-06-11"],
+    "opponent": "두산",
+    "preSaleDate": "2026-05-26", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-05-26", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+  {
+    "gameDates": ["2026-06-23", "2026-06-24", "2026-06-25"],
+    "opponent": "NC",
+    "preSaleDate": "2026-06-09", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-06-09", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+  {
+    "gameDates": ["2026-06-26", "2026-06-27", "2026-06-28"],
+    "opponent": "LG",
+    "preSaleDate": "2026-06-12", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-06-12", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+
+  {
+    "gameDates": ["2026-07-07", "2026-07-08", "2026-07-09"],
+    "opponent": "KIA",
+    "preSaleDate": "2026-06-23", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-06-23", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+  {
+    "gameDates": ["2026-07-21", "2026-07-22", "2026-07-23"],
+    "opponent": "SSG",
+    "preSaleDate": "2026-07-07", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-07-07", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+  {
+    "gameDates": ["2026-07-24", "2026-07-25", "2026-07-26"],
+    "opponent": "KT",
+    "preSaleDate": "2026-07-10", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-07-10", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+  {
+    "gameDates": ["2026-07-31", "2026-08-01", "2026-08-02"],
+    "opponent": "삼성",
+    "preSaleDate": "2026-07-17", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-07-17", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+
+  {
+    "gameDates": ["2026-08-04", "2026-08-05", "2026-08-06"],
+    "opponent": "키움",
+    "preSaleDate": "2026-07-21", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-07-21", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+  {
+    "gameDates": ["2026-08-14", "2026-08-15", "2026-08-16"],
+    "opponent": "NC",
+    "preSaleDate": "2026-07-31", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-07-31", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+  {
+    "gameDates": ["2026-08-18", "2026-08-19", "2026-08-20"],
+    "opponent": "키움",
+    "preSaleDate": "2026-08-04", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-08-04", "generalTime": "14:00", "generalLabel": "일반예매"
+  },
+  {
+    "gameDates": ["2026-08-28", "2026-08-29", "2026-08-30"],
+    "opponent": "LG",
+    "preSaleDate": "2026-08-14", "preSaleTime": "10:00", "preSaleLabel": "멤버십 예매",
+    "generalDate": "2026-08-14", "generalTime": "14:00", "generalLabel": "일반예매"
   }
 ]
